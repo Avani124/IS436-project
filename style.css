@@ -40,3 +40,21 @@ button
     outline: none;
     cursor: pointer;
 }
+.signup-btn
+{
+    background-color: #1c8adb;
+}
+a
+{
+    text-decoration: none;
+}
+hr
+{
+    margin-top: 20px;
+    width: 80%;
+}
+img
+{
+    width: 70px;
+    margin-top: -50px;
+}
