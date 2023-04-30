@@ -1,20 +1,34 @@
-<html>
-    <head>
-      <title>Login Form</title>
-      <link rel="stylesheet" href="style.css">
-    </head>
-      <body>
-        <div class ="login-form">
-          
-          <h1> Login Now </h1>
-          <form>
-            <input type="email" class="input-box" placeholder="Your Email">
-            <input type="email" class="input-box" placeholder="Your Password">
+<?php
 
-            <p>I agree to the terms of services</p>
-            <p class="submit"><input type = "submit" name = "commit" value="Login"></p>
-            
-          </form>
-        </div>
-      </body>
-  </html>
+require 'dbconn.php';
+$tbl_name="members"; // Table name 
+
+
+
+// username and password sent from form 
+$username=isset(_POST['username'])? $_POST['username'] : ''; 
+$password=isset($_POST['password'])? $_POST['password']: ''; 
+
+// To protect MySQL injection (more detail about MySQL injection)
+$username = stripslashes($username);
+$password = stripslashes($password);
+$sql="SELECT * FROM $tbl_name WHERE username='$username' and password='$password'";
+$result = $conn->query($sql);
+
+// Mysql_num_row is counting table row
+$count=$result->num_rows;
+
+// If result matched $username and $password, table row must be 1 row
+if($count==1){
+    session_start();
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $username;
+	
+	header("Location: menu.html"); /* Redirect browser */
+exit();
+}
+else{
+  header("Location: index.html?error=invalid");
+  exit();
+}
+?
