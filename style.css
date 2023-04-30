@@ -1,6 +1,5 @@
 body
 {
-    background-image: url(pic.jpg);
     margin: 0;
     padding: 0;
 
@@ -53,4 +52,9 @@ hr
 {
     margin-top: 20px;
     width: 80%;
+}
+img
+{
+    width: 100px;
+    margin-top: -50px;
 }
