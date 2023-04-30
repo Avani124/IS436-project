@@ -32,4 +32,4 @@ else{
   header("Location: index.html?error=invalid");
   exit();
 }
-?
+?>
