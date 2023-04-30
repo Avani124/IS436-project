@@ -6,12 +6,13 @@ $tbl_name="members"; // Table name
 
 
 // username and password sent from form 
-$username=isset(_POST['username'])? $_POST['username'] : ''; 
-$password=isset($_POST['password'])? $_POST['password']: ''; 
+$username=$_POST['username']; 
+$password=$_POST['password']; 
 
 // To protect MySQL injection (more detail about MySQL injection)
 $username = stripslashes($username);
 $password = stripslashes($password);
+
 $sql="SELECT * FROM $tbl_name WHERE username='$username' and password='$password'";
 $result = $conn->query($sql);
 
