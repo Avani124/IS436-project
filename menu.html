@@ -6,31 +6,107 @@
     <meta http-equiv="x-UA-Compatible" content="IE=edge">
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
     <!-- Nav Code -->
-    
     <nav class="navbar navbar-expand-lg bg-light">
-      <div class="topnav">
-        <a class="nav-link " href="index.html">Home</a>
-        <a class="active" href="#home">Menu</a>
-        <div class="topnav-right">
-          <a href="./signUp.html">Sign Up</a>
-          <a href="./login.html">Login</a>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"> <img src="https://picsart.com/i/sticker-304991163170211"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 "></ul>
+            <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Menu</a>
+            </li>
+            <a href="./signUp.html"><h2>Sign Up</h2></a>
+            <a href="./login.html"><h2>Login</h2></a>
+          </ul>
         </div>
       </div>
-      
     </nav>
   </head>
-
   <body>
     <h1>THIS IS THE MENU PAGE BODY</h1>
     <div class="site-content clear">
       <!--MENUS-->
       <div class="menus custom_category">
-        <h2 class="custom_general_menu">Our Menu <span class="shade-left">&nbsp;</span> <span class="icon">&nbsp;</span></h2>
         <h2 class="custom_general_menu mt20" >Our Restaurant <span class="shade-left">&nbsp;</span></h2>
         <div class="pt10" > Reteriver's Pizza in Catonsville, Maryland provides pizza delivery to all of Catonsville espcially our UMBC family
-  Our extensive menu includes our famous pizza 
+        <h2 class="custom_general_menu">Our Menu <span class="shade-left">&nbsp;</span> <span class="icon">&nbsp;</span></h2>
+        <div class="pt10" > Our extensive menu feautures our famous pizza
       </div>
+    <!-- ITEMS -->
+    <div id="foods" class="popup_block"></div>
+    <div class="list clear product-item">
+      <div class="list clear product-item">
+        <h3><a class="add-to-cart-85223" href="javascript: void(0);">Medium 1 Topping</a></h3>
+        <p>&nbsp;</p>
+        <label><a href="javascript: void(0)" class="add-to-cart-85223">$9.49</a></label>
+        <span class="custom_tab"><a class="add-to-cart-85223" href="javascript: void(0);">+ ORDER</a></span> </div>
+      <div class="list clear product-item">
+        <h3><a class="add-to-cart-66621" href="javascript: void(0);">Large 1 Topping</a></h3>
+        <p>&nbsp;</p>
+        <label><a href="javascript: void(0)" class="add-to-cart-66621">$10.49</a></label>
+        <span class="custom_tab"><a class="add-to-cart-66621" href="javascript: void(0);">+ ORDER</a></span> </div>
+      <div class="list clear product-item">
+        <h3><a class="add-to-cart-66622" href="javascript: void(0);">Extra Large 1 Topping</a></h3>
+        <p>&nbsp;</p>
+        <label><a href="javascript: void(0)" class="add-to-cart-66622">$11.49</a></label>
+        <span class="custom_tab"><a class="add-to-cart-66622" href="javascript: void(0);">+ ORDER</a></span> </div>
+     
+  <!--PAGE NAVIGATION-->
+</div>
+<!--SHOPPING CART AND MENU HOURS RIGHT SIDEBAR-->
+<div class="cart-menu-hours">
+  <!--SHOPPING CART-->
+  <div class="cart">
+    <h2 class="custom_general_menu">Shopping Cart <span class="shade-right">&nbsp;</span> <span class="icon">&nbsp;</span></h2>
+    <div class="details">
+      <form name="formCheckout" id="formCheckout" action="https://www.todayspizzacatonsville.com/cart/" method="post">
+        <table id="right-cart" class="orders">
+          <tr>
+            <th class="name">Name</th>
+            <th class="qty">Qty</th>
+            <th class="price">Price</th>
+          </tr>
+         
+        </table>
+        <table class="amount-details">
+          <tr id="offer_hidden" class="bold" style="display: none;">
+            <td>Coupon</td>
+            <td id="offer_information"></td>
+          </tr>
+          <tr>
+            <td>Subtotal</td>
+            <td id="subtotal_price">$0.00</td>
+          </tr>
+          <tr id="misc_charge" style="display: none;">
+            <td></td>
+            <td id="misc_charge_amount">$0.00</td>
+          </tr>
+          <tr class="discount" style="display: none;">
+            <td>Discount</td>
+            <td id="discount_information">$0</td>
+          </tr>
+          <tr >
+            <td>Tax<span class="invisible">(<span id="restaurant-tax">6.000</span>%)</span></td>
+            <td id="tax-value">$0.00</td>
+          </tr>
+          <tr id="delivery_charge" >
+            <td>Delivery Charge<span class="invisible" id="charge_type">0|2.95</span></td>
+            <td id="delivery_charge_value">$2.95</td>
+          </tr>
+          <tr id="tip-container" class="">
+            <td>Tip</td>
+            <td><select name="tip"><option value="0">Please select...</option></select> </td>
+          </tr>
+          <tr class="total-amount">
+            <td>Total Amount</td>
+            <td class="amount" id="total-amount">$0.00</td>
+          </tr>
   </body>
 </html>
