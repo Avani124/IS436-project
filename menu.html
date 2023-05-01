@@ -65,7 +65,7 @@
 }
   </style>
   <body>
-    <h1>THIS IS THE MENU PAGE BODY</h1>
+    <h1>Reteriver Pizza Menu</h1>
     <div class="site-content clear">
       <!--MENUS-->
       <div class="menus custom_category">
@@ -141,5 +141,34 @@
             <td>Total Amount</td>
             <td class="amount" id="total-amount">$0.00</td>
           </tr>
+        </table>
+        <div class="order-time">
+          <p style="border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;"><strong>Order For:</strong><br />
+            <input type="radio" name="ordertype" id="ordertype_1" value="1"  /><label for="ordertype_1">Delivery</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="ordertype" id="ordertype_2" value="2"  /><label for="ordertype_2">Dine In</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="ordertype" id="ordertype_3" value="3"  /><label for="ordertype_3">Pick Up</label>&nbsp;&nbsp;&nbsp; </p>
+          <p><strong>Order Time</strong>
+            <input  type="radio" name="ordertime" id="now" value="now"  />
+            <label  for="now">ASAP</label>
+            <input  type="radio" name="ordertime" id="later" value="later"  />
+            <label  for="later">Later</label>
+          </p>
+          <p id="ordertime_later">Date
+            <input type="text" id="datepicker" name="date" class="date" value="Select Date" />
+            Time
+            <select name="time" style="width: 65px;">  
+
+        <!--MENU HOURS-->
+      <div class="menu-hours">
+        <div class="">
+          <h2 class="custom_general_menu">Hours <span class="shade-right">&nbsp;</span> <span class="icon">&nbsp;</span></h2>
+          <div class="schedule">
+            <!--<p>Sunday thru Thursday 11:00AM - 11:15PM</p><p>Friday thru Saturday 11:00AM - 01:15AM</p>-->
+            <div><strong>Restaurant Hours</strong></div>
+            <p>Sunday thru Thursday 11:00AM - 11:15PM</p><p>Friday thru Saturday 11:00AM - 01:15AM</p>
+            <div class="pt20 ">
+              <div><strong>Delivery Hours</strong></div>
+              <p>Sunday thru Thursday 11:00AM - 11:30PM</p><p>Friday thru Saturday 11:00AM - 01:30AM</p> </div>
+          </div>
+        </div>
+      </div>      
   </body>
 </html>
