@@ -6,44 +6,70 @@
     <meta http-equiv="x-UA-Compatible" content="IE=edge">
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
-
   </head>
 
   <!-- Style Code -->
-  <style type="text/css">
-    body{
-      background-color: #ffffff!important;
+  <style>
+    /* Optional CSS styles for menu appearance */
+    ul.menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
     }
-    .custom_navigation_bar_bg{
-      background-color: #026f75!important;
+ 
+ 
+    ul.menu li {
+      display: inline-block;
+      margin-right: 10px;
     }
-    .custom_address_color{
-      color: #0099a5!important;
+ 
+ 
+    ul.menu li a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
     }
-    .custom_general_menu{
-      color: #FFFFFF!important;
+ 
+ 
+    ul.menu li a:hover {
+      background-color: #ddd;
     }
-    .custom_general_menu{
-      background-color: #0099a5!important;
+   
+    /* CSS styles for ingredient buttons */
+    .ingredient-btn {
+      display: inline-block;
+      padding: 8px 12px;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
-    .custom_category .menu-selected,.custom_category a:hover{
-      color: #333333!important;
+   
+    .ingredient-btn:hover {
+      background-color: #45a049;
     }
-    .custom_category .menu-selected,.custom_category a:hover{
-      background-color: #DDDDDD!important;
+   
+    /* CSS styles for shopping cart */
+    .shopping-cart {
+      background-color: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+      margin-top: 20px;
     }
-    .custom_tab a,.custom_button{
-      background-color: #0099a5!important;
+   
+    .cart-item {
+      margin-bottom: 5px;
     }
-    .custom_tab a,.custom_button{
-      color: #FFFFFF!important;
-    }
-    .custom_tab a:hover,.custom_button:hover{
-      background-color: #ee1e24!important;
-    }
-    .social-media a:hover{
-      background: 0!important;
+   
+    .total-price {
+      margin-top: 10px;
+      font-weight: bold;
     }
   </style>
   <body>
@@ -57,113 +83,42 @@
           <a href="./login.html">Login</a>
         </div>
       </div>
-    
     </nav>
     
     <h1>Reteriver Pizza Menu</h1>
-    <div class="site-content clear">
-      <!--MENUS-->
-      <div class="menus custom_category">
-        <h2 class="custom_general_menu">Our Menu <span class="shade-left">&nbsp;</span> <span class="icon">&nbsp;</span></h2>
-        <div class="pt10" > Our menu feautures our famous pizza
-      </div>
-    <!-- ITEMS -->
-    <div id="foods" class="popup_block"></div>
-    <div class="list clear product-item">
-      <div class="list clear product-item">
-        <h3><a class="add-to-cart-85223" href="javascript: void(0);">Medium 1 Topping</a></h3>
-        <p>&nbsp;</p>
-        <label><a href="javascript: void(0)" class="add-to-cart-85223">$9.49</a></label>
-        <span class="custom_tab"><a class="add-to-cart-85223" href="javascript: void(0);">+ ORDER</a></span> </div>
-      <div class="list clear product-item">
-        <h3><a class="add-to-cart-66621" href="javascript: void(0);">Large 1 Topping</a></h3>
-        <p>&nbsp;</p>
-        <label><a href="javascript: void(0)" class="add-to-cart-66621">$10.49</a></label>
-        <span class="custom_tab"><a class="add-to-cart-66621" href="javascript: void(0);">+ ORDER</a></span> </div>
-      <div class="list clear product-item">
-        <h3><a class="add-to-cart-66622" href="javascript: void(0);">Extra Large 1 Topping</a></h3>
-        <p>&nbsp;</p>
-        <label><a href="javascript: void(0)" class="add-to-cart-66622">$11.49</a></label>
-        <span class="custom_tab"><a class="add-to-cart-66622" href="javascript: void(0);">+ ORDER</a></span> </div>
-     
-  <!--PAGE NAVIGATION-->
-</div>
-<!--SHOPPING CART AND MENU HOURS RIGHT SIDEBAR-->
-<div class="cart-menu-hours">
-  <!--SHOPPING CART-->
-  <div class="cart">
-    <h2 class="custom_general_menu">Shopping Cart <span class="shade-right">&nbsp;</span> <span class="icon">&nbsp;</span></h2>
-    <div class="details">
-      <form name="formCheckout" id="formCheckout" action="./login.html" method="post">
-        <table id="right-cart" class="orders">
-          <tr>
-            <th class="name">Name</th>
-            <th class="qty">Qty</th>
-            <th class="price">Price</th>
-          </tr>
-         
-        </table>
-        <table class="amount-details">
-          <tr id="offer_hidden" class="bold" style="display: none;">
-            <td>Coupon</td>
-            <td id="offer_information"></td>
-          </tr>
-          <tr>
-            <td>Subtotal</td>
-            <td id="subtotal_price">$0.00</td>
-          </tr>
-          <tr id="misc_charge" style="display: none;">
-            <td></td>
-            <td id="misc_charge_amount">$0.00</td>
-          </tr>
-          <tr class="discount" style="display: none;">
-            <td>Discount</td>
-            <td id="discount_information">$0</td>
-          </tr>
-          <tr >
-            <td>Tax<span class="invisible">(<span id="restaurant-tax">6.000</span>%)</span></td>
-            <td id="tax-value">$0.00</td>
-          </tr>
-          <tr id="delivery_charge" >
-            <td>Delivery Charge<span class="invisible" id="charge_type">0|2.95</span></td>
-            <td id="delivery_charge_value">$2.95</td>
-          </tr>
-          <tr id="tip-container" class="">
-            <td>Tip</td>
-            <td><select name="tip"><option value="0">Please select...</option></select> </td>
-          </tr>
-          <tr class="total-amount">
-            <td>Total Amount</td>
-            <td class="amount" id="total-amount">$0.00</td>
-          </tr>
-        </table>
-        <div class="order-time">
-          <p style="border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;"><strong>Order For:</strong><br />
-            <input type="radio" name="ordertype" id="ordertype_1" value="1"  /><label for="ordertype_1">Delivery</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="ordertype" id="ordertype_2" value="2"  /><label for="ordertype_2">Dine In</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="ordertype" id="ordertype_3" value="3"  /><label for="ordertype_3">Pick Up</label>&nbsp;&nbsp;&nbsp; </p>
-          <p><strong>Order Time</strong>
-            <input  type="radio" name="ordertime" id="now" value="now"  />
-            <label  for="now">ASAP</label>
-            <input  type="radio" name="ordertime" id="later" value="later"  />
-            <label  for="later">Later</label>
-          </p>
-          <p id="ordertime_later">Date
-            <input type="text" id="datepicker" name="date" class="date" value="Select Date" />
-            Time
-            <select name="time" style="width: 65px;">  
+    <input type="radio" name="base" id="small" value="Small Pizza Base" onclick="addToCart('Small Pizza Base', 6.0)">
+ <label for="small">Small ($6.00)</label><br>
+  <input type="radio" name="base" id="medium" value="Medium Pizza Base" onclick="addToCart('Medium Pizza Base', 8.0)">
+ <label for="medium">Medium ($8.00)</label><br>
+  <input type="radio" name="base" id="large" value="Large Pizza Base" onclick="addToCart('Large Pizza Base', 10.0)">
+ <label for="large">Large ($10.00)</label><br>
+  <h2>Choose pizza toppings:</h2>
+  <button class="ingredient-btn" onclick="addToCart('Tomato', 1.5)">Tomato ($1.50)</button>
+ <button class="ingredient-btn" onclick="addToCart('Lettuce', 0.5)">Lettuce ($0.50)</button>
+ <button class="ingredient-btn" onclick="addToCart('Cheese', 2.0)">Cheese ($2.00)</button>
+ <button class="ingredient-btn" onclick="addToCart('Onion', 0.75)">Onion ($0.75)</button>
+  <div class="shopping-cart">
+   <h3>Shopping
+</h3>
+   <div id="cart-items"></div>
+   <div class="total-price">Total Price: $<span id="total-price">0.00</span></div>
+ </div>
 
-        <!--MENU HOURS-->
-      <div class="menu-hours">
-        <div class="">
-          <h2 class="custom_general_menu">Hours <span class="shade-right">&nbsp;</span> <span class="icon">&nbsp;</span></h2>
-          <div class="schedule">
-            <!--<p>Sunday thru Thursday 11:00AM - 11:15PM</p><p>Friday thru Saturday 11:00AM - 01:15AM</p>-->
-            <div><strong>Restaurant Hours</strong></div>
-            <p>Sunday thru Thursday 11:00AM - 02:15AM</p><p>Friday thru Saturday 11:00AM - 03:15AM</p>
-            <div class="pt20 ">
-              <div><strong>Delivery Hours</strong></div>
-              <p>Sunday thru Thursday 11:00AM - 02:30AM</p><p>Friday thru Saturday 11:00AM - 03:30AM</p> </div>
-          </div>
-        </div>
-      </div>      
-  </body>
+
+  <script>
+   var totalPrice = 0.0;
+   var cartItems = document.getElementById("cart-items");
+   var totalElement = document.getElementById("total-price");
+  
+   function addToCart(item, price) {
+     var newItem = document.createElement("div");
+     newItem.classList.add("cart-item");
+     newItem.textContent = item + " ($" + price.toFixed(2) + ")";
+     cartItems.appendChild(newItem);
+    
+     totalPrice += price;
+     totalElement.textContent = totalPrice.toFixed(2);
+   }
+ </script>
+</body>
 </html>
