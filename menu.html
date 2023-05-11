@@ -86,38 +86,74 @@
     
     <h1>Reteriver Pizza Menu</h1>
     <input type="radio" name="base" id="small" value="Small Pizza Base" onclick="addToCart('Small Pizza Base', 6.0)">
- <label for="small">Small ($6.00)</label><br>
-  <input type="radio" name="base" id="medium" value="Medium Pizza Base" onclick="addToCart('Medium Pizza Base', 8.0)">
- <label for="medium">Medium ($8.00)</label><br>
-  <input type="radio" name="base" id="large" value="Large Pizza Base" onclick="addToCart('Large Pizza Base', 10.0)">
- <label for="large">Large ($10.00)</label><br>
-  <h2>Choose pizza toppings:</h2>
-  <button class="ingredient-btn" onclick="addToCart('Tomato', 1.5)">Tomato ($1.50)</button>
- <button class="ingredient-btn" onclick="addToCart('Lettuce', 0.5)">Lettuce ($0.50)</button>
- <button class="ingredient-btn" onclick="addToCart('Cheese', 2.0)">Cheese ($2.00)</button>
- <button class="ingredient-btn" onclick="addToCart('Onion', 0.75)">Onion ($0.75)</button>
-  <div class="shopping-cart">
-   <h3>Shopping
-</h3>
-   <div id="cart-items"></div>
-   <div class="total-price">Total Price: $<span id="total-price">0.00</span></div>
- </div>
+    <label for="small">Small ($8.00)</label><br>
+    <input type="radio" name="base" id="medium" value="Medium Pizza Base" onclick="addToCart('Medium Pizza Base', 8.0)">
+    <label for="medium">Medium ($9.50)</label><br>
+    <input type="radio" name="base" id="large" value="Large Pizza Base" onclick="addToCart('Large Pizza Base', 10.0)">
+    <label for="large">Large ($12.00)</label><br>
 
+    <h2>Choose pizza toppings:</h2>
+    <h3>Sauce</h3>
+    <button class="ingredient-btn" onclick="addToCart('BBQ Sauce')">BBQ Sauce</button>
+    <button class="ingredient-btn" onclick="addToCart('Garlic Rub')">Garlic Rub</button>
+    <button class="ingredient-btn" onclick="addToCart('Pesto')">Pesto</button>
+    <button class="ingredient-btn" onclick="addToCart('Red Sauce')">Red Sauce</button>
+    <button class="ingredient-btn" onclick="addToCart('Spicy Chilli Red Sauce')">Spicy Chilli Red Sauce</button>
+    <button class="ingredient-btn" onclick="addToCart('White Sauce')">White Sauce</button>
 
-  <script>
-   var totalPrice = 0.0;
-   var cartItems = document.getElementById("cart-items");
-   var totalElement = document.getElementById("total-price");
-  
-   function addToCart(item, price) {
-     var newItem = document.createElement("div");
-     newItem.classList.add("cart-item");
-     newItem.textContent = item + " ($" + price.toFixed(2) + ")";
-     cartItems.appendChild(newItem);
+    <h3>Cheese</h3>
+    <button class="ingredient-btn" onclick="addToCart('Mozzarella')">Mozzarella</button>
+    <button class="ingredient-btn" onclick="addToCart('Feta')">Feta</button>
+    <button class="ingredient-btn" onclick="addToCart('Parmesan')">Parmesan</button>
+    <button class="ingredient-btn" onclick="addToCart('Asiago')">Asiago</button>
+    <button class="ingredient-btn" onclick="addToCart('No Cheese')">No Cheese</button>
+
+    <h3>Meets</h3>
+    <button class="ingredient-btn" onclick="addToCart('BBQ Sauce')">Chicken</button>
+    <button class="ingredient-btn" onclick="addToCart('Garlic Rub')">Spicy Chicken</button>
+    <button class="ingredient-btn" onclick="addToCart('Pesto')">Grilled Chicken</button>
+    <button class="ingredient-btn" onclick="addToCart('Red Sauce')">Ground Beef</button>
+    <button class="ingredient-btn" onclick="addToCart('Spicy Chilli Red Sauce')">Pepperoni</button>
+    <button class="ingredient-btn" onclick="addToCart('White Sauce')">Salami</button>
+
+    <h3>Veggies, Etc</h3>
+    <button class="ingredient-btn" onclick="addToCart('Corn')">Corn</button>
+    <button class="ingredient-btn" onclick="addToCart('Garlic')">Garlic</button>
+    <button class="ingredient-btn" onclick="addToCart('Green Bell Pepper')">Green Bell Pepper</button>
+    <button class="ingredient-btn" onclick="addToCart('Red Bell Pepper')">Red Bell Pepper</button>
+    <button class="ingredient-btn" onclick="addToCart('Mushroom')">Mushroom</button>
+    <button class="ingredient-btn" onclick="addToCart('Jalepenos')">Jalepenos</button>
+    <button class="ingredient-btn" onclick="addToCart('Onion')">Onion</button>
+    <button class="ingredient-btn" onclick="addToCart('Pineapple')">Pineapple</button>
+    <button class="ingredient-btn" onclick="addToCart('Spinach')">Spinach</button>
+    <button class="ingredient-btn" onclick="addToCart('Tomato Diced')">Tomato Diced</button>
+    <button class="ingredient-btn" onclick="addToCart('Rosemary')">Rosemary</button>
+    <button class="ingredient-btn" onclick="addToCart('Salt & Pepper')">Salt & Pepper</button>
+
+    <button class="ingredient-btn" onclick="addToCart('Wagyu Beef', 3.5)">Wagyu Beef ($3.50)</button>
+    <button class="ingredient-btn" onclick="addToCart('Calamari', 3.5)">Calamari ($3.50)</button>
     
-     totalPrice += price;
-     totalElement.textContent = totalPrice.toFixed(2);
-   }
- </script>
+    <div class="shopping-cart">
+      <h3>Shopping</h3>
+      <div id="cart-items"></div>
+      <div class="total-price">Total Price: $<span id="total-price">0.00</span></div>
+    </div>
+
+
+    <script>
+    var totalPrice = 0.0;
+    var cartItems = document.getElementById("cart-items");
+    var totalElement = document.getElementById("total-price");
+    
+    function addToCart(item, price) {
+      var newItem = document.createElement("div");
+      newItem.classList.add("cart-item");
+      newItem.textContent = item + " ($" + price.toFixed(2) + ")";
+      cartItems.appendChild(newItem);
+      
+      totalPrice += price;
+      totalElement.textContent = totalPrice.toFixed(2);
+    }
+    </script>
 </body>
 </html>
